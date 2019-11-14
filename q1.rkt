@@ -1,4 +1,7 @@
 #lang racket
+(provide (all-defined-out))
+
+(require racket/trace)
 
 (define (sumUpRecursive lst)
   (if (empty? lst)
@@ -10,3 +13,6 @@
   (cond
     [(empty? lst) sumTillNow]
     [else (sumUpTailRecursion (rest lst) (+ sumTillNow (first lst)))]))
+
+(trace sumUpRecursive)
+(trace sumUpTailRecursion)
