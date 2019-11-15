@@ -9,7 +9,7 @@
       (+ (first lst)
          (sumUpRecursive (rest lst)))))
 
-(define (sumUpTailRecursion lst sumTillNow)
+(define (sumUpTailRecursion lst [sumTillNow 0])
   (cond
     [(empty? lst) sumTillNow]
     [else (sumUpTailRecursion (rest lst) (+ sumTillNow (first lst)))]))
